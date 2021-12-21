@@ -1,0 +1,48 @@
+﻿@model AtividadeModulo.Models.Pacote
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do Pacote</h1>
+
+<div>
+    <h4>Abaixo estão listados todos os dados referentes a esse pacote</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumAcompanhantes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumAcompanhantes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HospedagemSimNao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HospedagemSimNao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataIda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataIda)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataVolta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataVolta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.IdPacote">Atualizar Dados</a> |
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>

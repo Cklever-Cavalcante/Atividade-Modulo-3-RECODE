@@ -1,0 +1,177 @@
+﻿@model IEnumerable<AtividadeModulo.Models.Destino>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--   -------------------------------------------------------------  -->
+   <head>
+<!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="~/css/site.css" />
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+
+
+<h1>Lista de Destinos Cadastrados no Banco de Dados</h1>
+<p>Para adicionar um novo destino clique no botão!</p>
+<p>
+    <a class="btn btn-outline-warning" asp-action="Create">Adicionar Novo Destino</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pais)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pais)
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.IdDestino">Atualizar</a> |
+                <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.IdDestino">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdDestino">Remover</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
+
+<!-- Destinos -->
+      <div  class="our_room">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Destinos</h2>
+                     <p>Descubra lugares incríveis </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <figure><img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAsLSK4.img?h=552&w=750&m=6&q=60&u=t&o=f&l=f&x=1245&y=1406" alt="#"/></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Cairo - Egito</h3>
+                        <p>Cairo, a grande capital do Egito, está localizada às margens do rio Nilo.
+                                Em seu centro,
+                                ficam a Praça Tahrir e o amplo Museu Egípcio, que exibe uma coleção de antiguidades,
+                                como múmias reais e artefatos dourados do Rei Tutancâmon. Perto dali fica Gizé, local
+                                das famosas pirâmides e da Grande Esfinge, que data do século XXVI a.C. Na área
+                                arborizada de Zamalek, na ilha de Gezira, a Torre do Cairo, com 187 m de altura,
+                                proporciona vistas panorâmicas da cidade. </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <figure><img src="https://www.passagenspromo.com.br/blog/wp-content/uploads/2019/06/pontos-turisticos-de-roma-740x415.jpg" alt="#"/></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Roma - Itália</h3>
+                        <p>Roma, a capital da Itália, é uma cidade cosmopolita, enorme, com quase
+                                3.000 anos de
+                                arte, arquitetura e cultura influentes no mundo todo e à mostra. Ruínas antigas como o
+                                Fórum e o Coliseu evocam o poder do antigo Império Romano. A Cidade do Vaticano, sede da
+                                Igreja Católica Romana, tem a Basílica de São Pedro e os museus do Vaticano, que abrigam
+                                obras-primas como os afrescos da Capela Sistina de Michelângelo. </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <figure><img src="https://s2.glbimg.com/K4ASyiPUaK-mB4Lh-i9Fc9jv7gg=/e.glbimg.com/og/ed/f/original/2016/01/07/torre_eiffel_1.jpg" alt="#"/></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Paris - França</h3>
+                        <p>Paris, a capital da França, é uma importante cidade europeia e um centro
+                                mundial de arte,
+                                moda, gastronomia e cultura. Sua paisagem urbana do século XIX é cortada por avenidas
+                                largas e pelo rio Sena. A cidade é conhecida por monumentos como a Torre Eiffel e a
+                                Catedral de Notre-Dame, uma construção gótica do século XII, sendo famosa também pela
+                                cultura dos cafés e por lojas de estilistas famosos na Rue du Faubourg Saint-Honoré. </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <figure><img src="https://media-cdn.tripadvisor.com/media/photo-s/16/70/02/04/preciso-de-dicas-para.jpg" alt="#"/></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Tokyo - Japão</h3>
+                        <p>A Metrópole de Tóquio está dividida em 23 regiões especiais e 30 outros
+                                municípios comuns
+                                (cidades, vilas e aldeias). As regiões especiais ocupam a terra que era originalmente a
+                                Cidade de Tóquio antes de ser abolida em 1943. A população total das 23 regiões especias
+                                é de 8,28 milhões (estimativa de 2002) – ou seja, cerca de dois terços da população da
+                                Metrópole de Tóquio e um quarto da população da Área da Grande Tóquio. A sua densidade
+                                populacional é de 13.333 habitantes por quilómetro quadrado. </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <figure><img src="https://aiesec.org.br/wp-content/uploads/2021/05/Destinos-America-do-Sul_Machu-Picchu.jpeg" alt="#"/></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Machu Picchu - Peru</h3>
+                        <p> Machu Picchu é uma cidadela inca que fica no alto da Cordilheira dos Andes
+                                no Peru, acima do vale do rio Urubamba. Construída no século XV e posteriormente abandonada, ela é
+                                conhecida pelas sofisticadas muralhas de pedra contínuas, cujos imensos blocos foram
+                                unidos sem o uso de argamassa, pelas construções intrigantes que levam em conta o
+                                alinhamento dos astros e pelas vistas panorâmicas. A antiga utilidade dessas construções
+                                segue sendo um mistério. </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div id="serv_hover"  class="room">
+                     <div class="room_img">
+                        <figure><img src="https://visita.ai/wp-content/uploads/2021/04/atracoes-rio-de-janeiro-cristo.jpg" alt="#"/></figure>
+                     </div>
+                     <div class="bed_room">
+                        <h3>Rio de Janeiro - Brasil</h3>
+                        <p>O Rio de Janeiro é uma grande cidade brasileira à beira-mar, famosa pelas
+                                praias de
+                                Copacabana e Ipanema, pela estátua de 38 metros de altura do Cristo Redentor, no topo do
+                                Corcovado, e pelo Pão de Açúcar, um pico de granito com teleféricos até seu cume. A
+                                cidade também é conhecida pelas grandes favelas. O empolgante Carnaval, com carros
+                                alegóricos, fantasias extravagantes e sambistas, é considerado o maior do mundo. </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Fim Destinos -->

@@ -1,0 +1,36 @@
+﻿@model AtividadeModulo.Models.Destino
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do Destino Cadastrado</h1>
+
+<div>
+    <h4>Abaixo estão listados todos os dados referentes a esse destino</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.IdDestino">Atualizar Dados</a> |
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>

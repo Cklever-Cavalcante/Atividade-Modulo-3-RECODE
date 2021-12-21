@@ -1,0 +1,159 @@
+﻿@model IEnumerable<AtividadeModulo.Models.Pacote>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--   -------------------------------------------------------------  -->
+   <head>
+<!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="~/css/site.css" />
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+
+
+<h1>Lista de Pacotes Cadastrados no Banco de Dados</h1>
+<p>Para criar um novo pacote clique no botão!</p>
+<p>
+    <a class="btn btn-outline-warning" asp-action="Create">Criar Novo Pacote</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumAcompanhantes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospedagemSimNao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataIda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVolta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumAcompanhantes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HospedagemSimNao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataIda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataVolta)
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.IdPacote">Atualizar</a> |
+                <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.IdPacote">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdPacote">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
+
+<!-- Pacotes -->
+      <div  class="blog">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2 style="color: black;">Pacotes Exclusivos</h2>
+                     <p style="color: black;">Feitos especialmente para você e toda sua família </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="blog_box">
+                     <div class="blog_img">
+                        <figure><img id="img_pacotes"
+                                    src="https://thumbs.dreamstime.com/z/grupo-de-viagem-dos-desenhos-animados-132620884.jpg"
+                                    alt="#" /></figure>
+                     </div>
+                     <div class="blog_room">
+                            <h3>Paris - Rio de Janeiro</h3>
+                            <span>Clique abaixo na opção que deseja!</span>
+                            <hr />
+                            <p><a href="">Viagem popular (voo + hotel) R$ 3.875</a>
+                                    <hr />
+                                    <a href=""> Viagem de família (voo + hotel) R$ 3.885</a>
+                                    <hr />
+                                    <a href=""> Viagem romântica (voo + hotel) R$ 3.723</a>
+                                    <hr />
+                                    <a href=""> Viagem de luxo (voo + hotel) R$ 4.410</a>
+                                    <hr />
+                                    <a href=""> Viagem econômica (voo + hotel) R$ 2.726</a>
+                            </p>
+                        </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="blog_box">
+                     <div class="blog_img">
+                        <figure><img src="https://thumbs.dreamstime.com/z/grupo-de-viagem-dos-desenhos-animados-132620884.jpg" alt="#"/></figure>
+                     </div>
+                     <div class="blog_room">
+                            <h3>Cairo - Roma</h3>
+                            <span>Clique abaixo na opção que deseja!</span>
+                            <hr />
+                            <p><a href="">Viagem popular (voo + hotel) R$ 6.875</a>
+                                    <hr />
+                                    <a href=""> Viagem de família (voo + hotel) R$ 6.885</a>
+                                    <hr />
+                                    <a href=""> Viagem romântica (voo + hotel) R$ 6.723</a>
+                                    <hr />
+                                    <a href=""> Viagem de luxo (voo + hotel) R$ 8.410</a>
+                                    <hr />
+                                    <a href=""> Viagem econômica (voo + hotel) R$ 4.726</a>
+                            </p>
+                        </div>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="blog_box">
+                     <div class="blog_img">
+                        <figure><img src="https://thumbs.dreamstime.com/z/grupo-de-viagem-dos-desenhos-animados-132620884.jpg" alt="#"/></figure>
+                     </div>
+                     <div class="blog_room">
+                            <h3>Cusco - Tokyo</h3>
+                            <span>Clique abaixo na opção que deseja!</span>
+                            <hr />
+                            <p><a href="">Viagem popular (voo + hotel) R$ 9.875</a>
+                                    <hr />
+                                    <a href=""> Viagem de família (voo + hotel) R$ 9.885</a>
+                                    <hr />
+                                    <a href=""> Viagem romântica (voo + hotel) R$ 9.723</a>
+                                    <hr />
+                                    <a href=""> Viagem de luxo (voo + hotel) R$ 12.410</a>
+                                    <hr />
+                                    <a href=""> Viagem econômica (voo + hotel) R$ 6.726</a>
+                            </p>
+                        </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Fim pacotes -->

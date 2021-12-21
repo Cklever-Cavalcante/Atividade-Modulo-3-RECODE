@@ -1,0 +1,59 @@
+﻿@model AtividadeModulo.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Atualizar Cadastro do Cliente</h1>
+
+<h4>Para alterar seu cadastro, modifique as lacunas abaixo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CidadeReside" class="control-label"></label>
+                <input asp-for="CidadeReside" class="form-control" />
+                <span asp-validation-for="CidadeReside" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="IdCliente" />
+            <div class="form-group">
+                <label asp-for="UfReside" class="control-label"></label>
+                <input asp-for="UfReside" class="form-control" />
+                <span asp-validation-for="UfReside" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaisReside" class="control-label"></label>
+                <input asp-for="PaisReside" class="form-control" />
+                <span asp-validation-for="PaisReside" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar Alterações" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

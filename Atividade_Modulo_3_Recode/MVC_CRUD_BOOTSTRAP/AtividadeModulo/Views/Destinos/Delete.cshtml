@@ -1,0 +1,39 @@
+﻿@model AtividadeModulo.Models.Destino
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Remover Destino Existente</h1>
+
+<h3>Os dados a serem removidos estão listados abaixo</h3>
+<div>
+    <h4>Deseja realmente remover esse destino do banco de dados?</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdDestino" />
+        <input type="submit" value="Remover" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Voltar</a>
+    </form>
+</div>

@@ -1,0 +1,5 @@
+
+
+Não usei Migrations, primeiro criei o bando de dados e depois fiz a criação do CRUD e a conexão.
+
+O nome dado ao banco de dados foi, AgenciaViagensRecode

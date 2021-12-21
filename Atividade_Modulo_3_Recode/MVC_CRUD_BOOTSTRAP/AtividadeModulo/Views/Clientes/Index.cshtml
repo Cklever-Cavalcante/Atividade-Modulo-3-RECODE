@@ -1,0 +1,176 @@
+﻿@model IEnumerable<AtividadeModulo.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--   -------------------------------------------------------------  -->
+   <head>
+<!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="~/css/site.css" />
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+
+
+<h1>Lista de Clientes Cadastrados no Banco de Dados</h1>
+<p>Para cadastrar um novo cliente clique no botão!</p>
+<p>               
+    <a class="btn btn-outline-warning" asp-action="Create">Cadastrar Novo Cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CidadeReside)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UfReside)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaisReside)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CidadeReside)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UfReside)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaisReside)
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.IdCliente">Atualizar</a> |
+                <a class="btn btn-secondary" asp-action="Details" asp-route-id="@item.IdCliente">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdCliente">Remover</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
+
+       <!-- Galeria Viagens -->
+      <div  class="gallery">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Viagens Realizadas Pelos Nossos Clientes</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://previews.123rf.com/images/gmast3r/gmast3r1702/gmast3r170201959/72776601-young-people-group-tourist-sail-long-tail-thailand-boat-ocean-friends-sea-vacation-travel-trip-tropi.jpg" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjPKBVV_gT1TXHMyNruOGtvIC_5mFu-yMy_Q&usqp=CAU" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://static.euronews.com/articles/stories/05/43/61/86/808x539_cmsv2_c83d5edd-08fe-5b31-a0e1-b35509e4e291-5436186.jpg" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://images.unsplash.com/photo-1564762332974-5bf63a654c9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fG1leGljb3xlbnwwfDB8MHx8&w=1000&q=80" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://static01.nyt.com/images/2017/12/24/travel/24GetawaySolo1/24GetawaySolo1-articleLarge.jpg?quality=75&auto=webp&disable=upscale" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://t2conline.com/wp-content/uploads/2020/06/AdobeStock_48983629.jpeg" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://www.onetravel.com/going-places/wp-content/uploads/2019/12/Trip-to-Paris-810x486.jpg" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-3 col-sm-6">
+                  <div class="gallery_img">
+                     <figure><img src="https://www.traveldailymedia.com/assets/2021/03/shutterstock_706727218.jpg" alt="#"/></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Fim Galeria -->
+      <!--  Receber novidades -->
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Informe seus dados abaixo para receber novidades e promoções</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <form id="request" class="main_form">
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Nome" type="text" name="Name"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Email" type="email" name="Email"> 
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Message" type="text" Message="Name">Mensagem</textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button class="read_more">Enviar</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="col-md-6">
+                  <div class="map_main">
+                     <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Fim Receber Novidades -->
